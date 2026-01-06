@@ -1,0 +1,25 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <g id="latin">
+    <!-- Letter S - Bold geometric -->
+    <path id="sPath" d="M60 45 C60 20, 100 10, 130 10 C170 10, 200 25, 200 55 C200 85, 170 95, 130 105 C90 115, 60 125, 60 155 C60 185, 100 195, 140 195 C180 195, 210 180, 210 180 L200 160 C200 160, 175 175, 145 175 C110 175, 85 165, 85 150 C85 130, 115 120, 155 110 C195 100, 225 80, 225 50 C225 15, 185 -10, 130 -10 C80 -10, 40 10, 40 45 Z" fill="#ffffff"/>
+    
+    <!-- Eye Left (first zero) - Bold oval -->
+    <g id="eyeLeft">
+      <ellipse id="zeroLeft" cx="310" cy="100" rx="65" ry="95" fill="#ffffff"/>
+      <ellipse id="zeroLeftInner" cx="310" cy="100" rx="35" ry="55" fill="#0a0a0f"/>
+      <circle id="pupilLeft" class="pupil" cx="310" cy="100" r="20" fill="#ffffff"/>
+      <circle id="shineLeft" class="shine" cx="300" cy="85" r="6" fill="#0a0a0f" opacity="0.4"/>
+    </g>
+    
+    <!-- Eye Right (second zero) - Bold oval -->
+    <g id="eyeRight">
+      <ellipse id="zeroRight" cx="470" cy="100" rx="65" ry="95" fill="#ffffff"/>
+      <ellipse id="zeroRightInner" cx="470" cy="100" rx="35" ry="55" fill="#0a0a0f"/>
+      <circle id="pupilRight" class="pupil" cx="470" cy="100" r="20" fill="#ffffff"/>
+      <circle id="shineRight" class="shine" cx="460" cy="85" r="6" fill="#0a0a0f" opacity="0.4"/>
+    </g>
+    
+    <!-- Letter K - Bold geometric -->
+    <path id="kPath" d="M570 5 L570 195 L610 195 L610 120 L680 195 L730 195 L645 110 L720 5 L670 5 L610 90 L610 5 Z" fill="#ffffff"/>
+  </g>
+</svg>

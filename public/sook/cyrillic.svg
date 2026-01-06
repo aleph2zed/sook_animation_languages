@@ -1,0 +1,15 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <g id="cyrillic">
+    <!-- Cyrillic сук - Bold sans style, centered -->
+    
+    <!-- с (es) - like bold C -->
+    <path d="M125 100 C125 45, 170 10, 235 10 C275 10, 305 25, 325 50 L295 75 C280 55, 260 40, 235 40 C190 40, 160 65, 160 100 C160 135, 190 160, 235 160 C260 160, 280 145, 295 125 L325 150 C305 175, 275 190, 235 190 C170 190, 125 155, 125 100 Z" fill="#ffffff"/>
+    
+    <!-- у (u) - like Y with descender -->
+    <path d="M345 10 L345 45 L405 120 L465 45 L465 10 L500 10 L500 45 L430 135 L430 190 L395 190 L395 135 L325 45 L325 10 Z" fill="#ffffff"/>
+    
+    <!-- к (ka) - bold K -->
+    <rect x="515" y="10" width="35" height="180" fill="#ffffff"/>
+    <path d="M550 100 L625 10 L670 10 L585 105 L675 190 L625 190 L550 105 Z" fill="#ffffff"/>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <g id="korean">
+    <!-- Korean 숙 (suk/skilled) - Bold block style -->
+    
+    <!-- Top frame -->
+    <rect x="250" y="15" width="300" height="14" rx="4" fill="#ffffff"/>
+    <rect x="264" y="15" width="14" height="80" fill="#ffffff"/>
+    <rect x="522" y="15" width="14" height="80" fill="#ffffff"/>
+    
+    <!-- Center vertical -->
+    <rect x="393" y="15" width="14" height="100" fill="#ffffff"/>
+    
+    <!-- ㅗ vowel (horizontal with vertical) -->
+    <rect x="320" y="85" width="160" height="14" rx="4" fill="#ffffff"/>
+    
+    <!-- Circle element (ㅜ base) -->
+    <ellipse cx="400" cy="75" rx="30" ry="25" fill="none" stroke="#ffffff" stroke-width="12"/>
+    
+    <!-- Bottom enclosure ㄱ -->
+    <path d="M250 130 L250 185 L550 185 L550 130" fill="none" stroke="#ffffff" stroke-width="14" stroke-linejoin="round"/>
+    
+    <!-- Inner verticals -->
+    <rect x="320" y="130" width="14" height="55" fill="#ffffff"/>
+    <rect x="466" y="130" width="14" height="55" fill="#ffffff"/>
+  </g>
+</svg>

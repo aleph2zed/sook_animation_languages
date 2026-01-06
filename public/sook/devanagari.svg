@@ -1,0 +1,24 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <g id="devanagari">
+    <!-- Devanagari सुख (sukh/happiness) - Bold modern style -->
+    
+    <!-- Top headline bar (shirorekha) -->
+    <rect x="150" y="10" width="500" height="16" rx="4" fill="#ffffff"/>
+    
+    <!-- स (sa) - first character -->
+    <path d="M180 26 L180 140 C180 170, 210 190, 250 190 C290 190, 320 170, 320 140 L320 80 L280 80 L280 135 C280 155, 265 170, 250 170 C235 170, 220 155, 220 135 L220 26" fill="#ffffff"/>
+    <rect x="220" y="70" width="60" height="16" rx="4" fill="#ffffff"/>
+    
+    <!-- उ matra (u vowel) -->
+    <ellipse cx="380" cy="160" rx="35" ry="30" fill="none" stroke="#ffffff" stroke-width="18"/>
+    <rect x="360" y="26" width="18" height="110" fill="#ffffff"/>
+    
+    <!-- ख (kha) - with loop -->
+    <rect x="440" y="26" width="18" height="164" fill="#ffffff"/>
+    <path d="M458 60 C510 60, 550 100, 550 140 C550 180, 510 190, 480 190 C450 190, 440 170, 440 150" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+    <rect x="458" y="100" width="50" height="16" rx="4" fill="#ffffff"/>
+    
+    <!-- Final vertical -->
+    <rect x="590" y="26" width="18" height="164" fill="#ffffff"/>
+  </g>
+</svg>

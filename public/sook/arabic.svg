@@ -1,0 +1,24 @@
+<svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <g id="arabic">
+    <!-- Arabic سوق (suq/market) - Bold calligraphic style, right to left -->
+    
+    <!-- Baseline swoosh -->
+    <path d="M150 160 Q400 180, 650 150" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    
+    <!-- ق (qaf) - leftmost with two dots -->
+    <ellipse cx="220" cy="120" rx="50" ry="45" fill="none" stroke="#ffffff" stroke-width="16"/>
+    <path d="M220 165 Q220 190, 180 190" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="200" cy="50" r="12" fill="#ffffff"/>
+    <circle cx="240" cy="50" r="12" fill="#ffffff"/>
+    
+    <!-- و (waw) - middle, hook shape -->
+    <ellipse cx="400" cy="140" rx="35" ry="30" fill="none" stroke="#ffffff" stroke-width="16"/>
+    <path d="M435 130 Q460 100, 440 70 Q420 45, 380 55" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    
+    <!-- س (sin) - rightmost, three humps -->
+    <path d="M520 150 Q540 100, 560 150 Q580 100, 600 150 Q620 100, 640 150" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    <circle cx="540" cy="180" r="10" fill="#ffffff"/>
+    <circle cx="580" cy="180" r="10" fill="#ffffff"/>
+    <circle cx="620" cy="180" r="10" fill="#ffffff"/>
+  </g>
+</svg>

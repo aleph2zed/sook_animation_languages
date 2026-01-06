@@ -1,0 +1,271 @@
+/* S00K Manifesto Animation */
+/* Eyes animate in final logo */
+
+.container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+/* Background watermark */
+.watermark {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28vw;
+  font-weight: 900;
+  opacity: 0.03;
+  color: white;
+  z-index: 2;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+/* Final logo with eyes */
+.finalLogo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  z-index: 5;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.letterS,
+.letterK {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  text-shadow: 0 10px 60px rgba(0, 0, 0, 0.4);
+}
+
+.eye {
+  width: clamp(3.5rem, 10vw, 8rem);
+  height: clamp(5rem, 14vw, 11rem);
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 clamp(0.2rem, 0.5vw, 0.4rem);
+  position: relative;
+  transform-origin: center center;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+}
+
+.pupil {
+  width: 35%;
+  height: 35%;
+  background: #0a0a0f;
+  border-radius: 50%;
+  position: relative;
+  will-change: transform;
+}
+
+.pupil::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  top: 15%;
+  right: 15%;
+}
+
+/* Glow orb */
+.glowOrb {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Main content */
+.contentWrapper {
+  z-index: 10;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Phonetic text */
+.phoneticText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  will-change: transform, opacity, filter;
+  margin-bottom: 0.5rem;
+}
+
+/* Main script text */
+.dynamicText {
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 10px 60px rgba(0, 0, 0, 0.4);
+  will-change: transform, opacity, filter;
+}
+
+.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Meaning pill */
+.subText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.7rem, 1.3vw, 0.95rem);
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  will-change: transform, opacity, filter;
+  margin-top: 1rem;
+}
+
+/* Nav */
+.nav {
+  position: absolute;
+  top: 2.5rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.5;
+}
+
+/* Reduced motion */
+.reducedMotion .dynamicText,
+.reducedMotion .subText,
+.reducedMotion .phoneticText {
+  transform: none !important;
+  filter: none !important;
+}
+
+.startButton {
+  display: none;
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.startButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.reducedMotion .startButton {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dynamicText {
+    min-height: 140px;
+  }
+
+  .watermark {
+    font-size: 40vw;
+  }
+
+  .phoneticText {
+    font-size: 1.25rem;
+    letter-spacing: 0.4em;
+  }
+
+  .subText {
+    letter-spacing: 0.3em;
+    padding: 0.6rem 1.3rem;
+  }
+
+  .nav {
+    top: 1.5rem;
+    font-size: 0.6rem;
+  }
+
+  .glowOrb {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .eye {
+    margin: 0 0.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dynamicText {
+    min-height: 100px;
+  }
+
+  .phoneticText {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+  }
+
+  .subText {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+  }
+
+  .contentWrapper {
+    gap: 0.25rem;
+  }
+
+  .eye {
+    margin: 0 0.1rem;
+  }
+}

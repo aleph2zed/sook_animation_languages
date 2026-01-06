@@ -1,0 +1,278 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./app/components/sookIntro.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+/* S00K Manifesto Animation */
+/* Eyes animate in final logo */
+
+.sookIntro_container__QlAq5 {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+/* Background watermark */
+.sookIntro_watermark__n_ur2 {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28vw;
+  font-weight: 900;
+  opacity: 0.03;
+  color: white;
+  z-index: 2;
+  pointer-events: none;
+  letter-spacing: -0.02em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+/* Final logo with eyes */
+.sookIntro_finalLogo__pmVF3 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  z-index: 5;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.sookIntro_letterS__pLjk_,
+.sookIntro_letterK__tR_qq {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(5rem, 15vw, 12rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  text-shadow: 0 10px 60px rgba(0, 0, 0, 0.4);
+}
+
+.sookIntro_eye__ObLrd {
+  width: clamp(3.5rem, 10vw, 8rem);
+  height: clamp(5rem, 14vw, 11rem);
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 clamp(0.2rem, 0.5vw, 0.4rem);
+  position: relative;
+  transform-origin: center center;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+}
+
+.sookIntro_pupil__1rs71 {
+  width: 35%;
+  height: 35%;
+  background: #0a0a0f;
+  border-radius: 50%;
+  position: relative;
+  will-change: transform;
+}
+
+.sookIntro_pupil__1rs71::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  top: 15%;
+  right: 15%;
+}
+
+/* Glow orb */
+.sookIntro_glowOrb__dyQ8f {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Main content */
+.sookIntro_contentWrapper__SbkHQ {
+  z-index: 10;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Phonetic text */
+.sookIntro_phoneticText__lFqFh {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  will-change: transform, opacity, filter;
+  margin-bottom: 0.5rem;
+}
+
+/* Main script text */
+.sookIntro_dynamicText__5KXbX {
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 10px 60px rgba(0, 0, 0, 0.4);
+  will-change: transform, opacity, filter;
+}
+
+.sookIntro_hidden__mvLJ0 {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Meaning pill */
+.sookIntro_subText__6cER3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.7rem, 1.3vw, 0.95rem);
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.75rem 1.6rem;
+  border-radius: 50px;
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  will-change: transform, opacity, filter;
+  margin-top: 1rem;
+}
+
+/* Nav */
+.sookIntro_nav__s7Vv1 {
+  position: absolute;
+  top: 2.5rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.5;
+}
+
+/* Reduced motion */
+.sookIntro_reducedMotion__a0Z5_ .sookIntro_dynamicText__5KXbX,
+.sookIntro_reducedMotion__a0Z5_ .sookIntro_subText__6cER3,
+.sookIntro_reducedMotion__a0Z5_ .sookIntro_phoneticText__lFqFh {
+  transform: none !important;
+  filter: none !important;
+}
+
+.sookIntro_startButton__KoZxR {
+  display: none;
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.sookIntro_startButton__KoZxR:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sookIntro_reducedMotion__a0Z5_ .sookIntro_startButton__KoZxR {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sookIntro_dynamicText__5KXbX {
+    min-height: 140px;
+  }
+
+  .sookIntro_watermark__n_ur2 {
+    font-size: 40vw;
+  }
+
+  .sookIntro_phoneticText__lFqFh {
+    font-size: 1.25rem;
+    letter-spacing: 0.4em;
+  }
+
+  .sookIntro_subText__6cER3 {
+    letter-spacing: 0.3em;
+    padding: 0.6rem 1.3rem;
+  }
+
+  .sookIntro_nav__s7Vv1 {
+    top: 1.5rem;
+    font-size: 0.6rem;
+  }
+
+  .sookIntro_glowOrb__dyQ8f {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .sookIntro_eye__ObLrd {
+    margin: 0 0.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sookIntro_dynamicText__5KXbX {
+    min-height: 100px;
+  }
+
+  .sookIntro_phoneticText__lFqFh {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+  }
+
+  .sookIntro_subText__6cER3 {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+  }
+
+  .sookIntro_contentWrapper__SbkHQ {
+    gap: 0.25rem;
+  }
+
+  .sookIntro_eye__ObLrd {
+    margin: 0 0.1rem;
+  }
+}
+
