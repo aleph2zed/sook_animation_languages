@@ -127,12 +127,12 @@ export const SookIntro: React.FC<SookIntroProps> = ({
       },
     });
 
-    /* FINAL frame: watermark shrinks and morphs into logo with eyes */
+    /* FINAL frame: watermark seamlessly morphs into logo with eyes */
     if (isGoingToFinal) {
       /* Background to final color */
       tl.to(container, {
         backgroundColor: currentItem.color,
-        duration: 1.2,
+        duration: 1.4,
         ease: 'power2.inOut',
       }, 0);
 
@@ -145,30 +145,36 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         ease: 'power2.in',
       }, 0);
 
-      /* Watermark becomes more visible and starts shrinking */
+      /* Watermark becomes visible and shrinks to exact final logo size */
       tl.to(watermark, {
-        opacity: 0.5,
-        scale: 0.4,
-        duration: 0.8,
+        opacity: 0.6,
+        scale: 0.36,
+        duration: 1.0,
         ease: 'power2.inOut',
       }, 0.2);
 
-      /* Continue shrinking and fade as final logo takes over */
+      /* Prepare final logo at smaller size to match watermark, invisible */
+      tl.set(finalLogo, { opacity: 0, scale: 0.85 }, 0);
+
+      /* Seamless crossfade: watermark fades out as logo fades in simultaneously */
       tl.to(watermark, {
         opacity: 0,
-        scale: 0.35,
-        filter: 'blur(8px)',
-        duration: 0.4,
-        ease: 'power2.in',
-      }, 0.9);
+        duration: 0.3,
+        ease: 'power1.inOut',
+      }, 1.1);
 
-      /* Final logo fades in crisp and syncs with shrinking watermark */
-      tl.fromTo(
-        finalLogo,
-        { opacity: 0, scale: 0.85 },
-        { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out' },
-        1.0
-      );
+      tl.to(finalLogo, {
+        opacity: 1,
+        duration: 0.3,
+        ease: 'power1.inOut',
+      }, 1.1);
+
+      /* Expand to full size after crossfade */
+      tl.to(finalLogo, {
+        scale: 1,
+        duration: 0.5,
+        ease: 'power2.out',
+      }, 1.35);
 
       /* Glow intensifies */
       if (glow) {
@@ -214,16 +220,15 @@ export const SookIntro: React.FC<SookIntroProps> = ({
       if (loop) {
         tl.call(() => stopEyeAnimation());
 
-        /* Final logo fades and expands back */
+        /* Final logo fades out */
         tl.to(finalLogo, {
           opacity: 0,
-          scale: 1.1,
           duration: 0.5,
           ease: 'power2.in',
         });
 
-        /* Watermark resets */
-        tl.set(watermark, { filter: 'blur(0px)', scale: 1 });
+        /* Watermark resets to background state */
+        tl.set(watermark, { scale: 1 });
         tl.to(watermark, {
           opacity: 0.03,
           duration: 0.4,
@@ -234,9 +239,6 @@ export const SookIntro: React.FC<SookIntroProps> = ({
           y: -20,
           duration: 0.3,
         }, '<');
-
-        /* Reset final logo for next cycle */
-        tl.set(finalLogo, { scale: 0.85 });
 
         tl.call(() => {
           setIsFinal(false);
