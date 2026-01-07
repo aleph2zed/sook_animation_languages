@@ -9,7 +9,7 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  background: #1a1a1a;
+  background: #ffffff; /* Gallery white - static background */
 }
 
 /* Background watermark */
@@ -18,8 +18,8 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 28vw;
   font-weight: 900;
-  opacity: 0.03;
-  color: white;
+  opacity: 0.04; /* Subtle on white background */
+  color: #d0d0d0; /* Light grey instead of white */
   z-index: 2;
   pointer-events: none;
   letter-spacing: -0.02em;
@@ -102,12 +102,14 @@
 .contentWrapper {
   z-index: 10;
   text-align: center;
-  color: white;
+  color: #1a1a1a; /* Dark text for white background */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  max-width: 900px;
+  padding: 0 2rem;
 }
 
 /* Phonetic text */
@@ -116,7 +118,7 @@
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 300;
   letter-spacing: 0.5em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(26, 26, 26, 0.5); /* Dark text with transparency */
   text-transform: uppercase;
   will-change: transform, opacity, filter;
   margin-bottom: 0.5rem;
@@ -132,8 +134,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 0 10px 60px rgba(0, 0, 0, 0.4);
-  will-change: transform, opacity, filter;
+  /* No text shadow for cleaner gallery look */
+  will-change: transform, opacity, filter, color;
 }
 
 .hidden {
@@ -148,13 +150,34 @@
   text-transform: uppercase;
   letter-spacing: 0.4em;
   font-weight: 400;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.75rem 1.6rem;
+  background: transparent;
+  padding: 0.75rem 0;
   border-radius: 50px;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: none;
   will-change: transform, opacity, filter;
   margin-top: 1rem;
+  color: rgba(26, 26, 26, 0.6); /* Dark text */
+}
+
+/* Narrative sentence with embedded scripts */
+.narrativeText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #1a1a1a;
+  margin-top: 2.5rem;
+  will-change: transform, opacity, filter;
+  max-width: 850px;
+}
+
+/* Embedded foreign script styling */
+.narrativeText :global(.embedded-script) {
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0 4px;
+  display: inline-block;
+  /* Color is applied via inline styles in the HTML */
 }
 
 /* Nav */
@@ -165,7 +188,7 @@
   display: flex;
   justify-content: space-between;
   z-index: 20;
-  color: white;
+  color: #1a1a1a; /* Dark text for white background */
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
@@ -194,9 +217,9 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #1a1a1a;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 50px;
   cursor: pointer;
   z-index: 20;
@@ -204,7 +227,7 @@
 }
 
 .startButton:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .reducedMotion .startButton {

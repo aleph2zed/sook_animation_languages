@@ -20,6 +20,7 @@ export const SookIntro: React.FC<SookIntroProps> = ({
   const phoneticRef = useRef<HTMLDivElement>(null);
   const mainTextRef = useRef<HTMLHeadingElement>(null);
   const subTextRef = useRef<HTMLDivElement>(null);
+  const narrativeTextRef = useRef<HTMLDivElement>(null);
   const watermarkRef = useRef<HTMLDivElement>(null);
   const finalLogoRef = useRef<HTMLDivElement>(null);
   const eyeLeftRef = useRef<HTMLDivElement>(null);
@@ -35,7 +36,9 @@ export const SookIntro: React.FC<SookIntroProps> = ({
   const [currentPhonetic, setCurrentPhonetic] = useState('');
   const [currentScript, setCurrentScript] = useState('');
   const [currentMeaning, setCurrentMeaning] = useState('');
+  const [currentNarrative, setCurrentNarrative] = useState('');
   const [currentFont, setCurrentFont] = useState("'Montserrat', sans-serif");
+  const [currentColor, setCurrentColor] = useState('#0a0a0f');
   const [isFinal, setIsFinal] = useState(false);
 
   useEffect(() => {
@@ -100,7 +103,7 @@ export const SookIntro: React.FC<SookIntroProps> = ({
   }, []);
 
   const animateCycle = useCallback(() => {
-    if (!containerRef.current || !mainTextRef.current || !subTextRef.current || !watermarkRef.current || !phoneticRef.current || !finalLogoRef.current) return;
+    if (!containerRef.current || !mainTextRef.current || !subTextRef.current || !watermarkRef.current || !phoneticRef.current || !finalLogoRef.current || !narrativeTextRef.current) return;
     if (prefersReducedMotion) return;
 
     const currentItem = sookSteps[indexRef.current];
@@ -272,6 +275,14 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         ease: 'power2.in',
       }, 0);
 
+      tl.to(narrativeTextRef.current, {
+        filter: 'blur(10px)',
+        opacity: 0,
+        y: -20,
+        duration: 0.35,
+        ease: 'power2.in',
+      }, 0);
+
       if (glow) {
         tl.to(glow, {
           opacity: 0.5,
@@ -299,6 +310,8 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         setCurrentFont(currentItem.font);
         setCurrentScript(currentItem.script);
         setCurrentMeaning(currentItem.meaning);
+        setCurrentColor(currentItem.color);
+        setCurrentNarrative(currentItem.narrativeHTML || '');
         setIsFinal(false);
       }, [], 0.4);
 
@@ -330,6 +343,13 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         { filter: 'blur(8px)', opacity: 0, y: 25 },
         { filter: 'blur(0px)', opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
         0.65
+      );
+
+      tl.fromTo(
+        narrativeTextRef.current,
+        { filter: 'blur(8px)', opacity: 0, y: 25 },
+        { filter: 'blur(0px)', opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' },
+        0.75
       );
 
       tl.to(mainText, { scale: 1.02, duration: 0.2, ease: 'power2.out' }, 1.2);
@@ -420,7 +440,7 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         <h1
           ref={mainTextRef}
           className={`${styles.dynamicText} ${isFinal ? styles.hidden : ''}`}
-          style={{ fontFamily: currentFont }}
+          style={{ fontFamily: currentFont, color: currentColor }}
         >
           {currentScript}
         </h1>
@@ -428,6 +448,12 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         <div ref={subTextRef} className={styles.subText}>
           {currentMeaning}
         </div>
+
+        <div 
+          ref={narrativeTextRef}
+          className={styles.narrativeText}
+          dangerouslySetInnerHTML={{ __html: currentNarrative }}
+        />
       </div>
 
       <button className={styles.startButton} onClick={handleStart} aria-label="Skip intro">
