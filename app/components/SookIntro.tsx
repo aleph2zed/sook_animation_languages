@@ -132,9 +132,9 @@ export const SookIntro: React.FC<SookIntroProps> = ({
 
     /* FINAL frame: watermark seamlessly morphs into logo with eyes */
     if (isGoingToFinal) {
-      /* Background to final color */
+      /* Keep background white */
       tl.to(container, {
-        backgroundColor: currentItem.color,
+        backgroundColor: '#ffffff',
         duration: 1.4,
         ease: 'power2.inOut',
       }, 0);
@@ -300,7 +300,7 @@ export const SookIntro: React.FC<SookIntroProps> = ({
       }
 
       tl.to(container, {
-        backgroundColor: currentItem.color,
+        backgroundColor: '#ffffff',
         duration: 0.8,
         ease: 'power2.inOut',
       }, 0.15);
@@ -405,10 +405,10 @@ export const SookIntro: React.FC<SookIntroProps> = ({
       aria-label="S00K brand intro"
       role="img"
     >
-      <nav className={styles.nav}>
-        <div>S00K World</div>
-        <div>Menu</div>
-      </nav>
+      {/* Persistent header with brand name */}
+      <header className={styles.header}>
+        <h1 className={styles.brandName}>s00k.tv</h1>
+      </header>
 
       {/* Background watermark that shrinks into final logo */}
       <div ref={watermarkRef} className={styles.watermark}>
@@ -431,6 +431,12 @@ export const SookIntro: React.FC<SookIntroProps> = ({
 
       <div className={styles.contentWrapper}>
         <div 
+          ref={narrativeTextRef}
+          className={styles.narrativeText}
+          dangerouslySetInnerHTML={{ __html: currentNarrative }}
+        />
+
+        <div 
           ref={phoneticRef} 
           className={`${styles.phoneticText} ${isFinal ? styles.hidden : ''}`}
         >
@@ -448,12 +454,6 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         <div ref={subTextRef} className={styles.subText}>
           {currentMeaning}
         </div>
-
-        <div 
-          ref={narrativeTextRef}
-          className={styles.narrativeText}
-          dangerouslySetInnerHTML={{ __html: currentNarrative }}
-        />
       </div>
 
       <button className={styles.startButton} onClick={handleStart} aria-label="Skip intro">
