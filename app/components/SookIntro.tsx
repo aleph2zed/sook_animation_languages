@@ -408,6 +408,9 @@ export const SookIntro: React.FC<SookIntroProps> = ({
       {/* Persistent header with brand name */}
       <header className={styles.header}>
         <h1 className={styles.brandName}>s00k.tv</h1>
+        <div ref={subTextRef} className={styles.headerSubtext}>
+          {currentMeaning}
+        </div>
       </header>
 
       {/* Background watermark that shrinks into final logo */}
@@ -450,10 +453,6 @@ export const SookIntro: React.FC<SookIntroProps> = ({
         >
           {currentScript}
         </h1>
-        
-        <div ref={subTextRef} className={styles.subText}>
-          {currentMeaning}
-        </div>
       </div>
 
       <button className={styles.startButton} onClick={handleStart} aria-label="Skip intro">
